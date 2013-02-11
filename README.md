@@ -2,7 +2,7 @@ N-Queens Problem Solver
 =======================
 Solver for the N-Queens problem using OpenMP.
 
-Building 8queens-openmp
+Building nqueens-openmp
 ------------------------------
 - Install gcc 4.2 or higher
 - Run the following command
