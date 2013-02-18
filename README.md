@@ -2,19 +2,19 @@ N-Queens Problem Solver
 =======================
 Solver for the N-Queens problem using OpenMP.
 
-This code is hosted on https://github.com/victoraldecoa/N-Queens-Solver_OpenMP_Example
-
 Building nqueens-openmp
 ------------------------------
 - Install gcc 4.2 or higher
 - Run the following command
+
     gcc -O -fopenmp -o nqueens-openmp nqueens-openmp.c
     
 Running nqueens-openmp
 -----------------------
     Usage: ./nqueens [n] [num_workers]
 
-        num_workers    integer between 1 and 30. In case none is provided, or a number out of this range is provided, then it's used 30
+        num_workers    integer between 1 and 30. In case none is provided, or
+                       a number out of this range is provided, then it's used 30
         n              positive integer indicating the size of the nxn board and number of queens
         
 Speedup analysis
