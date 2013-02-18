@@ -57,7 +57,7 @@ int main(int argc, char* argv[])
         {
             max_iter *= n;
         }
-  }
+    }
   
     start_time = omp_get_wtime();
     
@@ -77,7 +77,27 @@ int main(int argc, char* argv[])
 			code /= n;
 		}
 		
-		if (check_acceptable(queen_rows, n)) number_solutions++;
+		if (check_acceptable(queen_rows, n))
+		{
+#pragma omp atomic
+		    number_solutions++;
+		    
+#pragma omp critical
+            {
+			    printf("\n");
+			    for (i = 0; i < n; i++)
+			    {
+			        int j;
+				    for (j = 0; j < n; j++)
+				    {
+					    if (queen_rows[i] == j)	printf("|X");
+					    else printf("| ");
+				    }
+				    printf("|\n");
+			    }
+			    printf("\n");
+			}
+		}
 	}
 
     // get end time
